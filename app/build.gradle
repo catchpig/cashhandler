@@ -5,7 +5,7 @@ android {
         config {
             keyAlias '异常测试'
             keyPassword 'mejust!@#123'
-            storeFile file('D:/Android/company/cashhandler/partner.jks')
+            storeFile file('D:/Android/github/cashhandler/partner.jks')
             storePassword 'mejust!@#123'
         }
     }

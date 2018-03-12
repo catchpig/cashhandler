@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Build;
-import android.os.Looper;
 import android.util.Log;
 
 import java.io.File;
@@ -85,17 +84,20 @@ public class CashHandler implements Thread.UncaughtExceptionHandler {
         }
         try {
             collectDeviceInfo();
-            final String fileName = saveCashInfo(ex);
-            new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    Looper.prepare();
-                    if (mCashListener!=null) {
-                        mCashListener.cashFilePath(fileName);
-                    }
-                    Looper.loop();
-                }
-            }).start();
+            String fileName = saveCashInfo(ex);
+            if (mCashListener!=null) {
+                mCashListener.cashFilePath(fileName);
+            }
+//            new Thread(new Runnable() {
+//                @Override
+//                public void run() {
+//                    Looper.prepare();
+//                    Looper.loop();
+//
+//                }
+//            }).start();
+//            Process.killProcess(Process.myPid());
+            System.exit(1);
         } catch (Exception e) {
             Log.e(TAG,"HandlerException----"+e.getMessage());
         }
@@ -103,7 +105,7 @@ public class CashHandler implements Thread.UncaughtExceptionHandler {
     }
 
     /**
-     * 设计设备和版本信息
+     * 收集设备和版本信息
      */
     private void collectDeviceInfo() throws Exception {
         PackageManager pm = mContext.getPackageManager();
