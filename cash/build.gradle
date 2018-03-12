@@ -1,9 +1,8 @@
 apply plugin: 'com.android.library'
+apply from: 'jitpack.gradle'
 
 android {
     compileSdkVersion 26
-
-
 
     defaultConfig {
         minSdkVersion 16
