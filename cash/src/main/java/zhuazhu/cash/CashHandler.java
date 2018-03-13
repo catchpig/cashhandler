@@ -25,7 +25,9 @@ import java.util.Map;
  * 创建人: 李涛<br/>
  * 修改人: 李涛<br/>
  * 修改时间: 2018-03-11 20:01<br/>
- * 描述:异常处理
+ * 描述:异常处理<br/>
+ * 异常日志文件保存路径:Android/data/包名/files/cash_log
+ *
  */
 
 public class CashHandler implements Thread.UncaughtExceptionHandler {

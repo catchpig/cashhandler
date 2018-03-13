@@ -18,7 +18,9 @@ public class CashApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
         CashHandler cashHandler = CashHandler.getInstance();
+        //异常日志路径回调
         cashHandler.setCashListener(new CashListener() {
             @Override
             public void cashFilePath(String fileName) {
