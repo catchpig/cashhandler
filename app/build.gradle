@@ -1,14 +1,6 @@
 apply plugin: 'com.android.application'
 
 android {
-    signingConfigs {
-        config {
-            keyAlias '异常测试'
-            keyPassword 'mejust!@#123'
-            storeFile file('D:/Android/github/cashhandler/partner.jks')
-            storePassword 'mejust!@#123'
-        }
-    }
     compileSdkVersion 26
     defaultConfig {
         applicationId "com.zhuazhu"
@@ -22,10 +14,6 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.config
-        }
-        debug {
-            signingConfig signingConfigs.config
         }
     }
 
