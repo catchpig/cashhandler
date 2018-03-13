@@ -22,11 +22,15 @@
 
 ## 使用方式
 
-1.在Application中初始化
+1.添加权限
+```
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+```
+2.在Application中初始化
 ```
 CashHandler cashHandler = CashHandler.getInstance();
 ```
-2.如果需要收集日志到远程服务器,可以实现接口
+3.如果需要收集日志到远程服务器,可以实现接口
 ```
 cashHandler.setCashListener(new CashListener() {
      @Override
